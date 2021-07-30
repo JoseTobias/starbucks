@@ -1,14 +1,27 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
+import { render, RenderResult } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { store } from 'store';
 
 import Layout from './index';
 
-test('renders Layout children', () => {
-  const { getByText } = render(
-    <Layout>
-      <p>children</p>
-    </Layout>
-  );
-  expect(getByText(/children/i)).toBeInTheDocument();
+let wrapper: RenderResult;
+
+describe('', () => {
+  beforeEach(() => {
+    wrapper = render(
+      <Provider store={store}>
+        <Layout>
+          <p>children</p>
+        </Layout>
+      </Provider>
+    );
+  });
+  it('Should renders children', () => {
+    expect(wrapper.getByText(/children/i)).toBeInTheDocument();
+  });
+  it('Should renders Header', () => {
+    expect(wrapper.getByTestId(/header/i)).toBeInTheDocument();
+  });
 });

@@ -2,13 +2,16 @@ import React, { ReactNode } from 'react';
 
 import Container from '@material-ui/core/Container';
 
+import Header from '../HeaderControl';
+
 interface IProps {
   children: ReactNode;
 }
 
-const components: React.FC<IProps> = ({ children }) => {
+const Layout: React.FC<IProps> = ({ children }) => {
   return (
     <>
+      <Header testId="header" />
       <Container maxWidth="md">
         <div>{children}</div>
       </Container>
@@ -16,4 +19,4 @@ const components: React.FC<IProps> = ({ children }) => {
   );
 };
 
-export default components;
+export default Layout;
