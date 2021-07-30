@@ -1,14 +1,17 @@
 import { storageNames } from 'constants/storageNames';
 
 import { createSlice } from '@reduxjs/toolkit';
+import { StorageService } from 'services/storage';
 import { RootState } from 'store';
 
 export interface ThemeState {
   isDark: boolean;
 }
 
+const storage = new StorageService();
+
 const initialState: ThemeState = {
-  isDark: Boolean(localStorage.getItem(storageNames.isDarkTheme)),
+  isDark: Boolean(storage.getItem(storageNames.isDarkTheme)),
 };
 
 export const themeSlice = createSlice({
@@ -19,11 +22,11 @@ export const themeSlice = createSlice({
       state.isDark = !state.isDark;
 
       if (state.isDark) {
-        localStorage.setItem(storageNames.isDarkTheme, state.isDark.toString());
+        storage.saveOrUpdateItem(storageNames.isDarkTheme, state.isDark);
         return;
       }
 
-      localStorage.removeItem(storageNames.isDarkTheme);
+      storage.removeItem(storageNames.isDarkTheme);
     },
   },
 });
