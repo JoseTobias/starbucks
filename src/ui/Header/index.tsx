@@ -40,6 +40,7 @@ const Header: React.FC<Props> = ({ theme, toggleTheme, testId }) => {
             className={classes.toggleThemeButton}
             color="primary"
             onClick={toggleTheme}
+            title="Dark Mode"
           >
             {theme.isDark ? (
               <ToggleOn fontSize="large" />
