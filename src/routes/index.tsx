@@ -10,7 +10,12 @@ const Routes: React.FC = () => {
       <Layout>
         <Switch>
           <Route exact path="/">
-            <CardStore />
+            <CardStore
+              city="cidade"
+              neighborhood="bairro"
+              image="https://www.starbucks.com.br/public/img/icons/starbucks-nav-logo.svg"
+              storeId="1"
+            />
           </Route>
           <Route path="/:storeId">
             <div>Cardápio</div>

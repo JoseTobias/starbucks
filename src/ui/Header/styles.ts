@@ -5,7 +5,7 @@ export const useStyles = makeStyles(({ spacing }) => ({
     height: spacing(9),
   },
   logo: {
-    width: spacing(20),
+    width: 51,
   },
   toggleThemeButton: {
     marginLeft: 'auto',

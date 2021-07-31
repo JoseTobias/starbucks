@@ -30,11 +30,7 @@ const Header: React.FC<Props> = ({ theme, toggleTheme, testId }) => {
       <Container maxWidth="md">
         <Toolbar disableGutters className={classes.header}>
           <Link href="/">
-            <img
-              src="https://www.starbucks.com.br/public/img/icons/starbucks-nav-logo.svg"
-              alt="Logo"
-              className={classes.logo}
-            />
+            <img src="/logo.svg" alt="Logo" className={classes.logo} />
           </Link>
           <IconButton
             className={classes.toggleThemeButton}
