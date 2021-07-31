@@ -8,7 +8,7 @@ import Layout from './index';
 
 let wrapper: RenderResult;
 
-describe('', () => {
+describe('Layout component', () => {
   beforeEach(() => {
     wrapper = render(
       <Provider store={store}>
