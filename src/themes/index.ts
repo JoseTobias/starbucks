@@ -5,10 +5,10 @@ export const getTheme = (dark: boolean): Theme =>
     palette: {
       type: dark ? 'dark' : 'light',
       primary: {
-        main: '#227baa',
+        main: '#306441',
       },
       secondary: {
-        main: '#fe0000',
+        main: '#33433d',
       },
     },
     shape: { borderRadius: 8 },
