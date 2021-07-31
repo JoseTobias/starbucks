@@ -15,7 +15,7 @@ const mockFunctions = {
   toggleTheme,
 };
 
-describe('', () => {
+describe('Header component', () => {
   it('Should toggle theme if clicks on button', async () => {
     const wrapper = render(
       <Header theme={theme} toggleTheme={mockFunctions.toggleTheme} />

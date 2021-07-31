@@ -6,23 +6,23 @@ import { utilsStyles } from 'utils/styles';
 
 import { useStyles } from './styles';
 
-interface IProps {
+export interface CardStoreProps {
   city: string;
   neighborhood: string;
   image: string;
-  storeId: string;
+  id: number;
 }
 
-const CardStore: React.FC<IProps> = ({
+export const CardStore: React.FC<CardStoreProps> = ({
   city,
   image,
   neighborhood,
-  storeId,
+  id,
 }) => {
   const classes = useStyles();
   const { removeTextDecoration } = utilsStyles();
   return (
-    <Link to={`/${storeId}`} className={removeTextDecoration}>
+    <Link to={`/${id}`} className={removeTextDecoration}>
       <Card className={classes.card}>
         <Box>
           <Typography variant="h5">{city}</Typography>

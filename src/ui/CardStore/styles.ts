@@ -5,8 +5,9 @@ export const useStyles = makeStyles(({ spacing }) => ({
     padding: spacing(3),
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   image: {
-    width: spacing(6),
+    width: spacing(14),
   },
 }));
