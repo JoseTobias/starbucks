@@ -4,6 +4,9 @@ export const getTheme = (dark: boolean): Theme =>
   createTheme({
     palette: {
       type: dark ? 'dark' : 'light',
+      background: {
+        default: dark ? '#303030' : '#f4f4f4',
+      },
       primary: {
         main: '#306441',
       },
