@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 import { CardStoreProps, CardStore } from '../CardStore';
+import Title from '../Title';
 interface IProps {
   list: Array<CardStoreProps>;
 }
@@ -10,11 +11,7 @@ interface IProps {
 const ListStore: React.FC<IProps> = ({ list }) => {
   return (
     <>
-      <Box marginTop={4}>
-        <Typography variant="h4" align="center">
-          Escolha a loja que deseja fazer o pedido
-        </Typography>
-      </Box>
+      <Title title="Escolha a loja que deseja fazer o pedido" />
       {list.map((card, index) => (
         <Box marginTop={2} key={index}>
           <CardStore
