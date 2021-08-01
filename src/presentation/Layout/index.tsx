@@ -11,7 +11,7 @@ interface IProps {
 const Layout: React.FC<IProps> = ({ children }) => {
   return (
     <>
-      <Header testId="header" />
+      <Header />
       <Container maxWidth="md">
         <div>{children}</div>
       </Container>

@@ -19,9 +19,9 @@ describe('Layout component', () => {
     );
   });
   it('Should renders children', () => {
-    expect(wrapper.getByText(/children/i)).toBeInTheDocument();
+    expect(wrapper.getByText('children')).toBeInTheDocument();
   });
   it('Should renders Header', () => {
-    expect(wrapper.getByTestId(/header/i)).toBeInTheDocument();
+    expect(wrapper.getByTitle('Dark Mode')).toBeInTheDocument();
   });
 });
