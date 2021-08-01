@@ -11,7 +11,7 @@ interface IProps {
 const ListStore: React.FC<IProps> = ({ list }) => {
   return (
     <>
-      <Title title="Escolha a loja que deseja fazer o pedido" />
+      <Title>Escolha a loja que deseja fazer o pedido</Title>
       {list.map((card, index) => (
         <Box marginTop={2} key={index}>
           <CardStore

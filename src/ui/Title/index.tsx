@@ -3,14 +3,14 @@ import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 
 interface IProps {
-  title: string;
+  children: React.ReactNode;
 }
 
-const Title: React.FC<IProps> = ({ title }) => {
+const Title: React.FC<IProps> = ({ children }) => {
   return (
     <Box marginTop={4}>
       <Typography variant="h4" align="center">
-        {title}
+        {children}
       </Typography>
     </Box>
   );
