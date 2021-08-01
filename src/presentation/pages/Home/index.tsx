@@ -12,13 +12,10 @@ const pages: React.FC = () => {
   const fetchStores = async () => {
     try {
       const data = await getStores();
-      if (data.length === 0) {
-        setShowTable(false);
-      } else {
-        setShowTable(true);
-      }
+      const dataExists = data.length > 0;
 
       setStoreArray(data);
+      setShowTable(dataExists);
 
       setLoading(false);
     } catch (_) {
