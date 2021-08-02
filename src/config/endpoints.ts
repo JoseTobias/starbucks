@@ -3,6 +3,6 @@ export default {
     get: 'stores',
   },
   menu: {
-    get: (id: number): string => `menu/${id}`,
+    get: (id: number): string => `menu?id=${id}`,
   },
 };
