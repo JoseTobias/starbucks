@@ -79,7 +79,6 @@ describe('Menu reducer', () => {
       reducer(state, action) {
         switch (action.type) {
           case 'menus/fetchMenu/fulfilled':
-            console.log(state);
             return {
               loading: false,
               menus: [action.payload],

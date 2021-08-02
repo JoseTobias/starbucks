@@ -3,17 +3,26 @@ import { getMenuItens } from 'services/menu/getMenu';
 import { RootState } from 'store';
 import { convertMenuItensRequestToMenuItens, Menu } from 'utils/convert';
 import { findIndex } from 'utils/find';
+import { isEmpty } from 'utils/validations';
 
 export const fetchMenu = createAsyncThunk(
   'menus/fetchMenu',
   async (storeId: number) => {
     const data = await getMenuItens(storeId);
-    const arrayMenu = convertMenuItensRequestToMenuItens(
-      data.list,
-      data.storeId,
-      data.storeName
-    );
-    return arrayMenu;
+    if (!isEmpty(data)) {
+      const menuItem = convertMenuItensRequestToMenuItens(
+        data.list,
+        data.storeId,
+        data.storeName
+      );
+      return menuItem;
+    }
+
+    return {
+      storeId: 0,
+      storeName: '',
+      list: [],
+    };
   }
 );
 
@@ -74,6 +83,10 @@ export const menuSlice = createSlice({
       })
       .addCase(fetchMenu.fulfilled, (state, action) => {
         state.loading = false;
+        if (!action.payload.storeName) {
+          return;
+        }
+
         const storeIndex = findIndex(
           state.menus,
           'storeId',
