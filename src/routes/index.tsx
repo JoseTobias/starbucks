@@ -2,7 +2,9 @@ import React from 'react';
 
 import Layout from 'presentation/Layout';
 import Home from 'presentation/pages/Home';
+import Menu from 'presentation/pages/Menu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 const Routes: React.FC = () => {
   return (
     <Router>
@@ -12,7 +14,7 @@ const Routes: React.FC = () => {
             <Home />
           </Route>
           <Route path="/:storeId">
-            <div>Cardápio</div>
+            <Menu />
           </Route>
           <Route path="/cart">
             <div>Carrinho</div>
