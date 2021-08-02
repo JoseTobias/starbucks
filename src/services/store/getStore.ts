@@ -18,8 +18,12 @@ interface Response {
 }
 
 export const getStores = async (): Promise<Array<Store>> => {
-  const {
-    data: { data },
-  } = await Api.get<Response>(Endpoints.stores.get);
-  return data;
+  try {
+    const {
+      data: { data },
+    } = await Api.get<Response>(Endpoints.stores.get);
+    return data;
+  } catch (_) {
+    return [];
+  }
 };

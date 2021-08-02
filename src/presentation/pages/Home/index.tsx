@@ -10,17 +10,13 @@ const pages: React.FC = () => {
   const [showTable, setShowTable] = useState(false);
 
   const fetchStores = async () => {
-    try {
-      const data = await getStores();
-      const dataExists = data.length > 0;
+    const data = await getStores();
+    const dataExists = data.length > 0;
 
-      setStoreArray(data);
-      setShowTable(dataExists);
+    setStoreArray(data);
+    setShowTable(dataExists);
 
-      setLoading(false);
-    } catch (_) {
-      setLoading(false);
-    }
+    setLoading(false);
   };
 
   useEffect(() => {
